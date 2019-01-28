@@ -1,0 +1,26 @@
+{% extends "learning_modules/base.html" %}
+{% load static %}
+
+{% block content %}
+
+    <div class="contentWrapper">
+        <div class="logo">
+
+            <img src="{% static "assets/logo copy.svg" %}" alt="Logo" id="hexLogo">
+
+        </div>
+        <div class="title">
+            INVESTR
+        </div>
+        <div class="subTitle" style="margin-bottom: 30px; font-size:23px;">
+            Providing world-class relative valuations, powered by machine learning.
+        </div>
+        <div class="buttonRow">
+            <a class="btn btn-success btn-lg navButton" href="{% url "learning_modules:introduction" %}">LEARN</a>
+            <a class="btn btn-success btn-lg navButton" href="{% url "learning_modules:compare_info_form" %}">ANALYZE</a>
+            <a class="btn btn-success btn-lg navButton" href="https://ca.rbcwealthmanagement.com/william.vastis/?gclid=CjwKCAiAyrXiBRAjEiwATI95mYonfVQBOIXIgQ6W77dxN162vOFkHYvm5XcyzDGCHFfVAa_jtB0RwxoCimEQAvD_BwE">CONNECT</a>
+
+        </div>
+    </div>
+
+{% endblock %}

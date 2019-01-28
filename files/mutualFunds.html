@@ -1,0 +1,55 @@
+{% extends "learning_modules/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="leftNav cleanBox">
+    <a class="goAwayA" href="{% url "learning_modules:introduction" %}"><div class="leftNavSection " style="border-top-right-radius: 10px; border-top-left-radius: 10px;">Introduction</div></a>
+    <a class="goAwayA" href="{% url "learning_modules:whatIsInvesting" %}"><div class="leftNavSection ">What is Investing?</div></a>
+    <a class="goAwayA" href="{% url "learning_modules:riskAndDiversification" %}"><div class="leftNavSection ">Risk and Diversification</div></a>
+    <a class="goAwayA" href="{% url "learning_modules:fixedIncome" %}"><div class="leftNavSection ">Fixed Income</div></a>
+    <a class="goAwayA" href="{% url "learning_modules:stocks" %}"><div class="leftNavSection ">Stocks</div></a>
+    <a class="goAwayA" href="{% url "learning_modules:mutualFunds" %}"><div class="leftNavSection active">Mutual Funds/ETFs</div></a>
+    <img src="{% static "assets/logo copy.svg" %}" alt="Logo" class="leftNavLogo">
+
+</div>
+
+<div class="rightWrapper">
+    <div class="tutorialContentWrapper cleanBox">
+        <div class="contentHeader">
+            <a class="btn btn-success btn-lg navButton" href="{% url "learning_modules:index" %}" >HOME</a>
+            <a class="btn btn-success btn-lg navButton" href="{% url "learning_modules:compare" %}">ANALYZE</a>
+            <a class="btn btn-success btn-lg navButton" href="#">CONNECT</a>
+            <img src="{% static "assets/logo copy.svg" %}" alt="Logo" class='textLogo-graphic'>
+            <div class="textLogo">INVESTR</div>
+            <div class="contentDetailLine"></div>
+        </div>
+
+        <div id="page1" class="tutorialSection" style="display: block;">
+            <div style="width: 100%; height: auto; align-content: center; align-items: center; text-align: center;">
+                <div class="textLogo">Mutual Funds/ETFs</div>
+            </div>
+            <div class="pagePara">Mutual funds are baskets of investment vehicles such as stocks and bonds that are managed by professional portfolio managers. Investors in mutual funds purchase ‘shares’ into a mutual fund, similar to purchasing stock in a company. In this case however, investors are indeed entitled to a percentage of the fund’s assets equal to their percentage ownership. Mutual funds are offered by investment companies and financial institutions.</div>
+            <div class="pagePara">One of the major advantages for mutual funds is that they are professionally managed, making them easily available to new investors who are interested in the market but have little to no experience. Mutual funds also offer excellent diversification at very low costs since the institution in charge is able to make large, bulk transactions. For example, it may be quite difficult for an investor to diversify $500 between different asset types, as a large chunk of the funds will go towards transaction fees.</div>
+            <div class="pagePara">Institutions offer mutual funds due to the fees associated with them that are collected on a rolling basis. These fees are known as the Management Expense Ratio (MER), and can typically range from 1% to 3.5%. An important caution for investors is that the MER tends to be charged regardless of how well (or how poorly) the fund has performed.</div>
+            <div class="pagePara">Exchange Traded Funds (ETFs), are funds that quite similar to mutual funds, but have a few minor differences. Firstly, ETFs are actually traded on an exchange, much like stocks. This allows them to be purchased at any point of the day during open market hours (usually 9:30AM to 4:00PM), since the price is constantly calculated like stock. In the case of mutual funds, the price of each share is actually calculated at market close (4:00PM), and this is when all purchases and sale of mutual funds are done. ETFs tend to mimic a market index, which is a weighted average of several stocks intended to represent either a stock market or a sector of the stock market. Because of this, they are easier to manage for portfolio managers. This is reflected in the form of a lower MER relative to mutual funds, as ETFs can have MERs around 0.5% to 0.75%.</div>
+        </div>
+    </div>
+</div>
+
+<a href="#">
+    <div id="nextButton" class="disable">
+        <div style="display: inline-block;">Next Page</div>
+        <img src="{% static "assets/chevron-sign-to-right.svg" %}" alt="nextArrow" style="height: 12px; display: inline-block;">
+    </div>
+</a>
+
+<a href="{% url "learning_modules:stocks" %}">
+    <div id="prevButton" >
+        <img src="{% static "assets/chevron-sign-to-left.svg" %}" alt="prevArrow" style="height: 12px; display: inline-block;">
+        <div style="display: inline-block;">Prev Page</div>
+    </div>
+</a>
+
+{% endblock %}

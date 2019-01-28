@@ -1,0 +1,26 @@
+{% extends "learning_modules/base.html" %}
+{% load static %}
+
+{% block content %}
+
+    <div class="contentWrapper">
+        <div class="logo">
+
+            <img src="{% static "assets/logo copy.svg" %}" alt="Logo" id="hexLogo">
+
+        </div>
+        <div class="title">
+            INVESTR
+        </div>
+        <div class="subTitle" style="margin-bottom: 30px;">
+            Powered by Machine Learning.
+        </div>
+        <div class="buttonRow">
+            <a class="btn btn-success btn-lg navButton" href="{% url "learning_modules:introduction" %}">LEARN</a>
+            <a class="btn btn-success btn-lg navButton" href="{% url "learning_modules:compare" %}">ANALYZE</a>
+            <a class="btn btn-success btn-lg navButton" href="#">CONNECT</a>
+
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,57 @@
+{% extends "learning_modules/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="leftNav cleanBox">
+    <a class="goAwayA" href="{% url "learning_modules:introduction" %}"><div class="leftNavSection " style="border-top-right-radius: 10px; border-top-left-radius: 10px;">Introduction</div></a>
+    <a class="goAwayA" href="{% url "learning_modules:whatIsInvesting" %}"><div class="leftNavSection ">What is Investing?</div></a>
+    <a class="goAwayA" href="{% url "learning_modules:riskAndDiversification" %}"><div class="leftNavSection ">Risk and Diversification</div></a>
+    <a class="goAwayA" href="{% url "learning_modules:fixedIncome" %}"><div class="leftNavSection ">Fixed Income</div></a>
+    <a class="goAwayA" href="{% url "learning_modules:stocks" %}"><div class="leftNavSection active">Stocks</div></a>
+    <a class="goAwayA" href="{% url "learning_modules:mutualFunds" %}"><div class="leftNavSection">Mutual Funds/ETFs</div></a>
+    <img src="{% static "assets/logo copy.svg" %}" alt="Logo" class="leftNavLogo">
+  
+</div>
+
+<div class="rightWrapper">
+    <div class="tutorialContentWrapper cleanBox">
+        <div class="contentHeader">
+            <a class="btn btn-success btn-lg navButton" href="{% url "learning_modules:index" %}" >HOME</a>
+            <a class="btn btn-success btn-lg navButton" href="{% url "learning_modules:compare" %}">ANALYZE</a>
+            <a class="btn btn-success btn-lg navButton" href="#">CONNECT</a>
+            <img src="{% static "assets/logo copy.svg" %}" alt="Logo" class='textLogo-graphic'>
+            <div class="textLogo">INVESTR</div>
+            <div class="contentDetailLine"></div>
+        </div>
+
+        <div id="page1" class="tutorialSection" style="display: block;">
+            <div style="width: 100%; height: auto; align-content: center; align-items: center; text-align: center;">
+                <div class="textLogo">Stocks</div>
+            </div>
+            <div class="pagePara">A common share, often referred to as ‘stock’, is a piece of representational ownership in a corporation. Contrary to popular belief, company stock does not represent a direct claim on the company’s assets and earnings. This is because in the eyes of the law, corporations are their own legal entity (just like a person), which means that the property of the corporation belongs only to itself. This legal distinction allows the liability of the corporation to be separated from the shareholder (an investor who owns one or more shares). Having a limited liability means that shareholders are not required to personally pay out-of-pocket in the event that the corporation gets sued or if they go bankrupt.</div>
+            <div class="pagePara">If a person owns 33% of the shares in a company, it is actually incorrect to say that they own 33% of the company. This is because corporations have a ‘separation of ownership and control’. Instead, the power of the shares come through voting rights at shareholder meetings. In these meetings, shareholders vote on critical decisions for the company, such as deciding who will run the operations. These people with tasked with increasing the value of the corporations are elected to the board of directors, and their main duties involve providing advice and hiring professional managers such as Chief Executive Officers. Due to this, having more shares means having more indirect control of the company’s direction.</div>
+            <div class="pagePara">Stocks are issued by issued by companies in order to raise capital, just like with corporate bonds discussed earlier. Instead of offering repayment after a set term date, the company instead immediately pays out investors in the form of equity (ownership, albeit representational) in the company. The company (or corporation) is said to go ‘public’ as soon as they allow investors to purchase stock. The raising of capital through equity funding (stocks) is done through a process called an Initial Public Offering (IPO). These stocks are said to be sold in the primary market, where the shares are sold directly from the corporation to the investor. In reality, almost all shares purchased are actually just trades between shareholders in another market called the secondary market. This hand-off of stocks for cash is facilitated by the usage of brokers, which are entities that charge a fee for executing buy-and-sell orders for stock. Examples of brokers include TD Direct Investing, BMO InvestorLine, or RBC Direct Investing. These brokers transact over a marketplace called an exchange, which include the Toronto Stock Exchange (TSX) in Canada and the New York Stock Exchange (NYSE) in the USA.</div>
+            <div class="pagePara">A corporation may choose to pay a portion of its profits back to its shareholders in the form of cash (cash dividends) or additional stock (stock dividends). For shareholders, it is essentially a share of the company’s profits. Corporations may elect to not issue dividends, as it allows for profits to stay within the company to be used for self-investing.</div>
+            <div class="pagePara">Stocks themselves are inherently riskier investments than bonds for a few reasons: In the case of bankruptcy where the company has to sell everything, creditors are the first in line to receive the funds. Any remaining funds are paid out to bondholders, leaving shareholders as the last-in-line. At the same time shareholders can enjoy possibly much higher returns by increasing profits, theoretically to infinity. On the flipside, stocks do not offer the level of predictable returns typical for bonds and GICs. This means that an investor may indeed lose money after purchasing stocks. This is why its very important to conduct proper research before choosing to invest in a company, and to diversify investments to reduce portfolio risk.</div>
+        </div>
+    </div>
+</div>
+
+<a href="{% url "learning_modules:mutualFunds" %}">
+    <div id="nextButton">
+        <div style="display: inline-block;">Next Page</div>
+        <img src="{% static "assets/chevron-sign-to-right.svg" %}" alt="nextArrow" style="height: 12px; display: inline-block;">
+    </div>
+</a>
+
+<a href="{% url "learning_modules:fixedIncome" %}">
+    <div id="prevButton" >
+        <img src="{% static "assets/chevron-sign-to-left.svg" %}" alt="prevArrow" style="height: 12px; display: inline-block;">
+        <div style="display: inline-block;">Prev Page</div>
+    </div>
+</a>
+ 
+{% endblock %}
+

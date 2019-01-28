@@ -1,0 +1,71 @@
+{% extends "learning_modules/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="leftNav cleanBox">
+    <a href="{% url "learning_modules:introduction" %}" class="leftNavSection leftNavSection-bg" style="border-top-right-radius: 10px; border-top-left-radius: 10px;">Introduction</a>
+    <a href="{% url "learning_modules:whatIsInvesting" %}" class="leftNavSection active">What is Investing?</a>
+    <a href="{% url "learning_modules:riskAndDiversification" %}" class="leftNavSection">Risk and Diversification</a>
+    <a href="{% url "learning_modules:fixedIncome" %}" class="leftNavSection">Fixed Income</a>
+    <a href="{% url "learning_modules:stocks" %}" class="leftNavSection">Stocks</a>
+    <a href="{% url "learning_modules:mutualFunds" %}" class="leftNavSection">Mutual Funds/ETFs</a>
+    <img src="{% static "assets/logo copy.svg" %}" alt="Logo" class="leftNavLogo">
+
+</div>
+
+<div class="rightWrapper">
+    <div class="tutorialContentWrapper cleanBox">
+        <div class="contentHeader">
+            <a class="btn btn-success btn-lg navButton" href="{% url "learning_modules:index" %}" >HOME</a>
+            <a class="btn btn-success btn-lg navButton" href="{% url "learning_modules:compare_info_form" %}">ANALYZE</a>
+            <a class="btn btn-success btn-lg navButton" href="#">CONNECT</a>
+            <img src="{% static "assets/logo copy.svg" %}" alt="Logo" class='textLogo-graphic'>
+            <div class="textLogo">INVESTR</div>
+            <div class="contentDetailLine"></div>
+        </div>
+
+        <div id="page1" class="tutorialSection" style="display: block;">
+            <div style="width: 100%; height: auto; align-content: center; align-items: center; text-align: center;">
+                <div class="textLogo">Introduction</div>
+            </div>
+            <div class="pagePara">Bacon ipsum dolor amet short loin frankfurter landjaeger alcatra ground round, flank capicola. Beef ribs chicken kielbasa, venison hamburger salami pig sirloin meatball shank ground round sausage. Shankle ham corned beef turducken jowl filet mignon, swine tongue. Jowl andouille buffalo chicken pork belly, filet mignon shoulder corned beef frankfurter swine venison burgdoggen short ribs meatloaf. Pork loin porchetta hamburger turkey drumstick bresaola shoulder. Jerky short ribs fatback, tail swine bresaola tri-tip.</div>
+            <div class="pagePara">Shank buffalo cupim pancetta doner, pork chop pork ham hock sausage pig boudin jerky capicola flank. Shankle cupim swine turducken capicola, sirloin buffalo. Drumstick leberkas tri-tip, picanha beef beef ribs meatball kielbasa short loin salami doner. Kielbasa brisket pork loin chicken corned beef, ham chuck drumstick jowl hamburger alcatra turducken spare ribs. Ground round buffalo landjaeger, salami pig shankle pork chop swine.</div>
+            <div class="pagePara">Tail boudin ribeye cupim landjaeger short loin. Tenderloin pastrami swine pork. Strip steak t-bone rump ball tip filet mignon kielbasa doner cow chuck jowl beef ribs bacon ribeye frankfurter capicola. Capicola turkey ham hock shoulder pork chop leberkas tail flank, swine meatloaf ball tip tongue hamburger. Ham short loin shank chuck drumstick doner tenderloin pancetta rump landjaeger jerky. Brisket kielbasa hamburger flank pork pork chop t-bone jowl buffalo porchetta meatball chicken prosciutto. Prosciutto ball tip cupim, pork belly leberkas pork chop boudin beef drumstick short loin ham hock.</div>
+            <div class="pagePara">Fatback rump spare ribs, leberkas picanha sirloin landjaeger hamburger cow pastrami short loin swine filet mignon jowl buffalo. Ribeye porchetta frankfurter jerky shoulder, prosciutto drumstick meatball pastrami buffalo strip steak ham landjaeger pork. Shank ball tip kevin jowl, bresaola pastrami tail meatball. Jowl pork chop jerky, shank landjaeger tenderloin leberkas frankfurter ground round tail tongue chicken. Cupim burgdoggen tail bacon tongue alcatra. Ribeye short loin pancetta rump hamburger bresaola.</div>
+        </div>
+        <div id="page2" class="tutorialSection">
+            <div style="width: 100%; height: auto; align-content: center; align-items: center; text-align: center;">
+                <div class="textLogo">Introduction</div>
+            </div>
+            <div class="pagePara">Bacon ipsum dolor amet short loin frankfurter landjaeger alcatra ground round, flank capicola. Beef ribs chicken kielbasa, venison hamburger salami pig sirloin meatball shank ground round sausage. Shankle ham corned beef turducken jowl filet mignon, swine tongue. Jowl andouille buffalo chicken pork belly, filet mignon shoulder corned beef frankfurter swine venison burgdoggen short ribs meatloaf. Pork loin porchetta hamburger turkey drumstick bresaola shoulder. Jerky short ribs fatback, tail swine bresaola tri-tip.</div>
+            <div class="pagePara">Shank buffalo cupim pancetta doner, pork chop pork ham hock sausage pig boudin jerky capicola flank. Shankle cupim swine turducken capicola, sirloin buffalo. Drumstick leberkas tri-tip, picanha beef beef ribs meatball kielbasa short loin salami doner. Kielbasa brisket pork loin chicken corned beef, ham chuck drumstick jowl hamburger alcatra turducken spare ribs. Ground round buffalo landjaeger, salami pig shankle pork chop swine.</div>
+            <div class="pagePara">Tail boudin ribeye cupim landjaeger short loin. Tenderloin pastrami swine pork. Strip steak t-bone rump ball tip filet mignon kielbasa doner cow chuck jowl beef ribs bacon ribeye frankfurter capicola. Capicola turkey ham hock shoulder pork chop leberkas tail flank, swine meatloaf ball tip tongue hamburger. Ham short loin shank chuck drumstick doner tenderloin pancetta rump landjaeger jerky. Brisket kielbasa hamburger flank pork pork chop t-bone jowl buffalo porchetta meatball chicken prosciutto. Prosciutto ball tip cupim, pork belly leberkas pork chop boudin beef drumstick short loin ham hock.</div>
+            <div class="pagePara">Fatback rump spare ribs, leberkas picanha sirloin landjaeger hamburger cow pastrami short loin swine filet mignon jowl buffalo. Ribeye porchetta frankfurter jerky shoulder, prosciutto drumstick meatball pastrami buffalo strip steak ham landjaeger pork. Shank ball tip kevin jowl, bresaola pastrami tail meatball. Jowl pork chop jerky, shank landjaeger tenderloin leberkas frankfurter ground round tail tongue chicken. Cupim burgdoggen tail bacon tongue alcatra. Ribeye short loin pancetta rump hamburger bresaola.</div>
+            <div class="pagePara">Bacon frankfurter doner jowl boudin turkey short ribs. Leberkas alcatra shank ball tip turkey jerky. Drumstick prosciutto meatloaf, brisket pancetta swine flank alcatra kielbasa short ribs turducken biltong ham hock beef ribs. Tenderloin turkey prosciutto t-bone ham hock frankfurter short loin rump andouille corned beef meatball shankle pork loin pastrami. Ribeye short ribs turducken capicola biltong landjaeger pastrami picanha. Venison frankfurter drumstick, pastrami ground round sausage jerky burgdoggen beef ribs andouille swine ribeye ball tip filet mignon.</div>
+            <div class="pagePara">Corned beef burgdoggen pastrami turkey fatback, tri-tip shankle shoulder bresaola ribeye. Rump cupim ham short loin pastrami. Venison capicola biltong, leberkas porchetta frankfurter bresaola shank pancetta beef ribs strip steak boudin. Shankle sausage hamburger biltong, prosciutto pork brisket.</div>
+        </div>
+        <div id="page3" class="tutorialSection"></div>
+        <div id="page4" class="tutorialSection"></div>
+        <div id="page5" class="tutorialSection"></div>
+        <div id="page6" class="tutorialSection"></div>
+        <div id="page7" class="tutorialSection"></div>
+
+        {% block tutorialContent %}
+        {% endblock %}
+
+    </div>
+</div>
+
+<div id="nextButton">
+    <div style="display: inline-block;">Next Page</div>
+    <img src="{% static "assets/chevron-sign-to-right.svg" %}" alt="nextArrow" style="height: 12px; display: inline-block;">
+</div>
+
+<div id="prevButton" class="disable">
+    <img src="{% static "assets/chevron-sign-to-left.svg" %}" alt="prevArrow" style="height: 12px; display: inline-block;">
+    <div style="display: inline-block;">Prev Page</div>
+</div>
+
+{% endblock %}

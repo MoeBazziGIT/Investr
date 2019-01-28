@@ -1,0 +1,68 @@
+{% extends "learning_modules/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="leftNav cleanBox">
+    <a class="goAwayA" href="{% url "learning_modules:introduction" %}"><div class="leftNavSection " style="border-top-right-radius: 10px; border-top-left-radius: 10px;">Introduction</div></a>
+    <a class="goAwayA" href="{% url "learning_modules:whatIsInvesting" %}"><div class="leftNavSection ">What is Investing?</div></a>
+    <a class="goAwayA" href="{% url "learning_modules:riskAndDiversification" %}"><div class="leftNavSection active">Risk and Diversification</div></a>
+    <a class="goAwayA" href="{% url "learning_modules:fixedIncome" %}"><div class="leftNavSection">Fixed Income</div></a>
+    <a class="goAwayA" href="{% url "learning_modules:stocks" %}"><div class="leftNavSection">Stocks</div></a>
+    <a class="goAwayA" href="{% url "learning_modules:mutualFunds" %}"><div class="leftNavSection">Mutual Funds/ETFs</div></a>
+    <img src="{% static "assets/logo copy.svg" %}" alt="Logo" class="leftNavLogo">
+  
+</div>
+
+<div class="rightWrapper">
+    <div class="tutorialContentWrapper cleanBox">
+        <div class="contentHeader">
+            <a class="btn btn-success btn-lg navButton" href="{% url "learning_modules:index" %}" >HOME</a>
+            <a class="btn btn-success btn-lg navButton" href="{% url "learning_modules:compare" %}">ANALYZE</a>
+            <a class="btn btn-success btn-lg navButton" href="#">CONNECT</a>
+            <img src="{% static "assets/logo copy.svg" %}" alt="Logo" class='textLogo-graphic'>
+            <div class="textLogo">INVESTR</div>
+            <div class="contentDetailLine"></div>
+        </div>
+
+        <div id="page1" class="tutorialSection" style="display: block;">
+            <div style="width: 100%; height: auto; align-content: center; align-items: center; text-align: center;">
+                <div class="textLogo">Risk and Diversification</div>
+            </div>
+            <div class="pagePara">In the previous module, we introduced the concept of risk as the probability of a loss on investment. In reality, there are multiple types of investment risk. You don’t need to memorize them all off by heart, but you should be familiar with what each of them mean.</div>
+            <div class="pagePara">A few definitions to help:
+                Equity – A representation of an ownership interest. For companies that are publicly-owned, the equity someone owns would be the shares (or stock) they have.
+                Liquidity – How quickly an asset can be bought or sold in the market, without affecting the asset’s price. It is important to make the distinction that it has to be sold at an unaffected price. This is because assets that are heavily discounted can be sold quickly, but it means that a huge loss is incurred because it was not sold at a fair price.
+                Portfolio – A grouping of financial assets (investment vehicles) such as stocks, bonds, currencies, and mutual funds. Portfolios also include assets that are not liquid or publicly traded such as real estate and art.
+                Diversification – A risk management technique that mixes different types of investments within a portfolio. This is done to ensure that the returns are generated from different kinds of investments, in order to yield higher returns in the long run by reducing the risk posed from an individual investment. As an example, if a person that invests only in stocks would generally be affected more in a declining stock market than a person that invests in a mixture of stocks, bonds and real estate.
+                Inflation – The sustained increase in the general level of prices for goods and services. Because the prices for the same goods and services go up year-over-year, this means that $100 today will purchase less than $100 in one year for example. This is called a loss of purchasing power. Inflation is the reason why leaving capital (or money) un-invested means that you are losing money in a sense.
+                </div>
+            <div class="pagePara">1.	Market Risk – The risk of investments declining in value because of events that affect the economy or the entire market.</div>
+            <div class="pagePara">2.	Liquidity Risk – The risk of being unable to sell the investment at a fair price. With illiquid investments, the investment might have to sold at a lower price or may not be purchased at all.</div>
+            <div class="pagePara">3.	Concentration Risk – The risk of loss due to the concentration of capital in a single investment type.</div>
+            <div class="pagePara">4.	Credit Risk – The risk that a company (or government) won’t be able to pay off their debt obligations. Failure to pay these debt obligations will result in bankruptcy, which means that all operations will immediately stop and every single asset that the company owns will be sold in an effort to pay off the owed debts.</div>
+            <div class="pagePara">5.    Inflation Risk – The risk of a loss in the purchase value if the investment returns don’t exceed inflation.</div>
+            <div class="pagePara">6.	Foreign Investment Risk – The risk of loss when investing in other countries. This can stem from factors such as the foreign country’s financial market health or political stability (or instability).</div>
+            <div class="pagePara">As seen above, there are many types of risks that have to be considered. To further build on our definition of an investment, we can say that the goal of investments is to maximize returns while also factoring in the associated risk. This return is known as the risk-adjusted return.</div>
+            <div class="pagePara">Now that we have a foundational understanding on investments and risk, we can now dive into the actual investment vehicles themselves.</div>
+        </div>
+    </div>
+</div>
+
+<a href="{% url "learning_modules:fixedIncome" %}">
+    <div id="nextButton">
+        <div style="display: inline-block;">Next Page</div>
+        <img src="{% static "assets/chevron-sign-to-right.svg" %}" alt="nextArrow" style="height: 12px; display: inline-block;">
+    </div>
+</a>
+
+<a href="{% url "learning_modules:whatIsInvesting" %}">
+    <div id="prevButton" >
+        <img src="{% static "assets/chevron-sign-to-left.svg" %}" alt="prevArrow" style="height: 12px; display: inline-block;">
+        <div style="display: inline-block;">Prev Page</div>
+    </div>
+</a>
+ 
+{% endblock %}
+

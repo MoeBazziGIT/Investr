@@ -1,0 +1,181 @@
+{% extends "learning_modules/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+  <div class="contentWrapper">
+    <h3>{{ title }}'s Predicted Share Prices</h3>
+
+    <canvas id="myChart" role=img and aria-label="Chart Not Available" style="max-width:1000px!important; max-height: 800px;"></canvas>
+    <!-- <br/>
+    <hr> -->
+    <!-- <h3>PROJECTED EARNINGS</h3>
+    <canvas id="myChart2" role=img and aria-label="Chart Not Available" style="max-width:1000px!important; max-height: 800px;"></canvas> -->
+
+    <input style="display:none;" type="hidden" value="{{ prices }}" id="prices">
+    <input style="display:none;" type="hidden" value="{{ accuracy }}" id="accuracy">
+    <input style="display:none;" type="hidden" value="{{ q_out }}" id="q_out"><br>
+    <a class="btn btn-success" style="color:white;" href="{% url 'learning_modules:index' %}">Home</a>
+
+
+  </div>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.js"></script>
+
+    <script>
+
+      var prices = document.getElementById('prices').value;
+      var accuracy = document.getElementById('accuracy').value;
+      var q_out = document.getElementById('q_out').value;
+
+      prices = JSON.parse(prices);
+
+      var dates = [];
+      var costs = [];
+      for (let item in prices){
+        dates.push(item);
+        costs.push(prices[item]);
+      }
+
+      maxCost = Math.max(...costs);
+
+      var ctx = document.getElementById("myChart").getContext('2d');
+      var myChart = new Chart(ctx, {
+          type: 'line',
+          data: {
+              labels: dates.slice(-6), // tickers
+              datasets: [{
+                  label: 'Current',
+                  data: costs.slice(-6, -q_out),
+                  backgroundColor: [
+                      'rgba(255, 99, 132, 0.2)',
+                      'rgba(54, 162, 235, 0.2)',
+                      'rgba(255, 206, 86, 0.2)',
+                      'rgba(75, 192, 192, 0.2)',
+                      'rgba(153, 102, 255, 0.2)',
+                      'rgba(255, 159, 64, 0.2)'
+                  ],
+                  borderColor: [
+                      'rgba(255,99,132,1)',
+                      'rgba(54, 162, 235, 1)',
+                      'rgba(255, 206, 86, 1)',
+                      'rgba(75, 192, 192, 1)',
+                      'rgba(153, 102, 255, 1)',
+                      'rgba(255, 159, 64, 1)'
+                  ],
+                  borderWidth: 1
+              },
+              {
+                  label: 'Predicted',
+                  data: [null,null,null,...costs.slice(-q_out-1)],
+                  backgroundColor: [
+                      'rgba(0, 99, 255, 0.2)',
+                      'rgba(54, 162, 235, 0.2)',
+                      'rgba(86, 206, 255, 0.2)',
+                      'rgba(75, 192, 192, 0.2)',
+                      'rgba(153, 102, 255, 0.2)',
+                      'rgba(64, 159, 255, 0.2)'
+                  ],
+                  borderColor: [
+                      'rgba(132,99,255,1)',
+                      'rgba(54, 162, 235, 1)',
+                      'rgba(86, 206, 255, 1)',
+                      'rgba(75, 192, 192, 1)',
+                      'rgba(153, 102, 255, 1)',
+                      'rgba(64, 159, 255, 1)'
+                  ],
+                  borderWidth: 1
+              }]
+          },
+          options: {
+              // responsive: true,
+              // maintainAspectRatio: false,
+              hover: {animationDuration: 500},
+              scales: {
+                  yAxes: [{
+                      ticks: {
+
+                      }
+                  }]
+              }
+          }
+      });
+
+      // costs = costs.map(x=>Math.round(x,2))
+      // var shareamt = 10000;
+      // console.log(shareamt);
+      // console.log(costs)
+      // shareamt /= costs[-6];
+      //
+      // costs2 = costs.map(x => x*shareamt);
+      // costs2[-6] = 10000;
+      //
+      // console.log(costs2)
+      //
+      // var ctx = document.getElementById("myChart2").getContext('2d');
+      // var myChart2 = new Chart(ctx, {
+      //     type: 'line',
+      //     data: {
+      //         labels: dates.slice(-6), // tickers
+      //         datasets: [{
+      //             label: 'Known',
+      //             data: costs2.slice(-6, -q_out),
+      //             backgroundColor: [
+      //                 'rgba(255, 99, 132, 0.2)',
+      //                 'rgba(54, 162, 235, 0.2)',
+      //                 'rgba(255, 206, 86, 0.2)',
+      //                 'rgba(75, 192, 192, 0.2)',
+      //                 'rgba(153, 102, 255, 0.2)',
+      //                 'rgba(255, 159, 64, 0.2)'
+      //             ],
+      //             borderColor: [
+      //                 'rgba(255,99,132,1)',
+      //                 'rgba(54, 162, 235, 1)',
+      //                 'rgba(255, 206, 86, 1)',
+      //                 'rgba(75, 192, 192, 1)',
+      //                 'rgba(153, 102, 255, 1)',
+      //                 'rgba(255, 159, 64, 1)'
+      //             ],
+      //             borderWidth: 1
+      //         },
+      //         {
+      //             label: 'Predicted',
+      //             data: [null,null,null,...costs2.slice(-q_out-1)],
+      //             backgroundColor: [
+      //                 'rgba(0, 99, 255, 0.2)',
+      //                 'rgba(54, 162, 235, 0.2)',
+      //                 'rgba(86, 206, 255, 0.2)',
+      //                 'rgba(75, 192, 192, 0.2)',
+      //                 'rgba(153, 102, 255, 0.2)',
+      //                 'rgba(64, 159, 255, 0.2)'
+      //             ],
+      //             borderColor: [
+      //                 'rgba(132,99,255,1)',
+      //                 'rgba(54, 162, 235, 1)',
+      //                 'rgba(86, 206, 255, 1)',
+      //                 'rgba(75, 192, 192, 1)',
+      //                 'rgba(153, 102, 255, 1)',
+      //                 'rgba(64, 159, 255, 1)'
+      //             ],
+      //             borderWidth: 1
+      //         }]
+      //     },
+      //     options: {
+      //         // responsive: true,
+      //         // maintainAspectRatio: false,
+      //         hover: {animationDuration: 500},
+      //         scales: {
+      //             yAxes: [{
+      //                 ticks: {
+      //
+      //                 }
+      //             }]
+      //         }
+      //     }
+      // });
+
+    </script>
+
+<div class="contentWrapper" style="visibility:hidden;"></div>
+{% endblock %}

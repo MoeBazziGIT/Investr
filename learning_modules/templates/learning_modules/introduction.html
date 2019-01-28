@@ -1,0 +1,53 @@
+{% extends "learning_modules/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="leftNav cleanBox">
+    <a class="goAwayA" href="{% url "learning_modules:introduction" %}"><div class="leftNavSection active" style="border-top-right-radius: 10px; border-top-left-radius: 10px;">Introduction</div></a>
+    <a class="goAwayA" href="{% url "learning_modules:whatIsInvesting" %}"><div class="leftNavSection">What is Investing?</div></a>
+    <a class="goAwayA" href="{% url "learning_modules:riskAndDiversification" %}"><div class="leftNavSection">Risk and Diversification</div></a>
+    <a class="goAwayA" href="{% url "learning_modules:fixedIncome" %}"><div class="leftNavSection">Fixed Income</div></a>
+    <a class="goAwayA" href="{% url "learning_modules:stocks" %}"><div class="leftNavSection">Stocks</div></a>
+    <a class="goAwayA" href="{% url "learning_modules:mutualFunds" %}"><div class="leftNavSection">Mutual Funds/ETFs</div></a>
+    <img src="{% static "assets/logo copy.svg" %}" alt="Logo" class="leftNavLogo">
+
+</div>
+
+<div class="rightWrapper">
+    <div class="tutorialContentWrapper cleanBox">
+        <div class="contentHeader">
+            <a class="btn btn-success btn-lg navButton" href="{% url "learning_modules:index" %}" >HOME</a>
+            <a class="btn btn-success btn-lg navButton" href="{% url "learning_modules:compare_info_form" %}">ANALYZE</a>
+            <a class="btn btn-success btn-lg navButton" href="#">CONNECT</a>
+            <img src="{% static "assets/logo copy.svg" %}" alt="Logo" class='textLogo-graphic'>
+            <div class="textLogo">INVESTR</div>
+            <div class="contentDetailLine"></div>
+        </div>
+
+        <div id="page1" class="tutorialSection" style="display: block;">
+            <div style="width: 100%; height: auto; align-content: center; align-items: center; text-align: center;">
+                <div class="textLogo">Introduction</div>
+            </div>
+            <div class="pagePara">Investing. A word that strikes fear into the hearts of those who don’t understand it. But it doesn’t have to be that way, honest.</div>
+            <div class="pagePara">Introducing Investr Learn, a straightforward, easy-to-follow financial education center for all things investing. With an easy-to-follow curriculum that will introduce fundamental concepts to those new to investing, or provide a quick refresher to those with some experience.</div>
+            <div class="pagePara">On the left-hand side, you can find the table of contents that highlights what’s covered. Feel free to skip ahead to other sections if you are feeling confident in your knowledge.</div>
+            <div class="pagePara">What are you waiting for? Let’s get started!</div>
+        </div>
+    </div>
+</div>
+
+<a href="{% url "learning_modules:whatIsInvesting" %}">
+    <div id="nextButton">
+        <div style="display: inline-block;">Next Page</div>
+        <img src="{% static "assets/chevron-sign-to-right.svg" %}" alt="nextArrow" style="height: 12px; display: inline-block;">
+    </div>
+</a>
+
+<div id="prevButton" class="disable">
+    <img src="{% static "assets/chevron-sign-to-left.svg" %}" alt="prevArrow" style="height: 12px; display: inline-block;">
+    <div style="display: inline-block;">Prev Page</div>
+</div>
+
+{% endblock %}

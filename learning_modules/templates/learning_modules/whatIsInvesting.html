@@ -1,0 +1,55 @@
+{% extends "learning_modules/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="leftNav cleanBox">
+    <a class="goAwayA" href="{% url "learning_modules:introduction" %}"><div class="leftNavSection " style="border-top-right-radius: 10px; border-top-left-radius: 10px;">Introduction</div></a>
+    <a class="goAwayA" href="{% url "learning_modules:whatIsInvesting" %}"><div class="leftNavSection active">What is Investing?</div></a>
+    <a class="goAwayA" href="{% url "learning_modules:riskAndDiversification" %}"><div class="leftNavSection">Risk and Diversification</div></a>
+    <a class="goAwayA" href="{% url "learning_modules:fixedIncome" %}"><div class="leftNavSection">Fixed Income</div></a>
+    <a class="goAwayA" href="{% url "learning_modules:stocks" %}"><div class="leftNavSection">Stocks</div></a>
+    <a class="goAwayA" href="{% url "learning_modules:mutualFunds" %}"><div class="leftNavSection">Mutual Funds/ETFs</div></a>
+    <img src="{% static "assets/logo copy.svg" %}" alt="Logo" class="leftNavLogo">
+
+</div>
+
+<div class="rightWrapper">
+    <div class="tutorialContentWrapper cleanBox">
+        <div class="contentHeader">
+            <a class="btn btn-success btn-lg navButton" href="{% url "learning_modules:index" %}" >HOME</a>
+            <a class="btn btn-success btn-lg navButton" href="{% url "learning_modules:compare" %}">ANALYZE</a>
+            <a class="btn btn-success btn-lg navButton" href="#">CONNECT</a>
+            <img src="{% static "assets/logo copy.svg" %}" alt="Logo" class='textLogo-graphic'>
+            <div class="textLogo">INVESTR</div>
+            <div class="contentDetailLine"></div>
+        </div>
+
+        <div id="page1" class="tutorialSection" style="display: block;">
+          <div style="width: 100%; height: auto; align-content: center; align-items: center; text-align: center;">
+              <div class="textLogo">What is Investing?</div>
+          </div>
+          <div class="pagePara">Formal definition: The act of committing money or capital to an endeavor with the expectation of obtaining an additional income or profit.</div>
+          <div class="pagePara">But wait, what is capital? Well, capital is just a term for financial assets or wealth. For most people, it refers to money held at the bank that’s ready to be used. In other words, investing is the process of laying out money now to receive more money in the future. To make this extra money, the capital is put into certain ‘investment vehicles’.</div>
+          <div class="pagePara">Investment vehicles don’t refer to literal vehicles. In their purest form, they are just products used by investors with the intention of gaining positive returns. They can vary in terms of risk, return, time horizon, as well as features. You have definitely heard of examples of these vehicles before. They include stocks, fixed-income investments (bonds and GICs), and mutual funds. We will go more into detail on those a bit later.</div>
+          <div class="pagePara">A very important concept of investing is the concept of risk versus return. In general, there is a concrete relationship between the two, which means that the riskier a certain investment is, the higher potential return. To illustrate this, assume two investment vehicles: Option A with a potential return of 10% and potential loss of 5%, and Option B with a potential return of 12% and a potential loss of 7%. If both options had the same potential loss of 5%, everyone would obviously go with option B. But in reality, option B has to offer a higher return than option A because it comes with a potential to lose more money. This is referred to as a risk premium, which is essentially a reward for carrying on more risk. Let’s look more into this concept of risk and how to reduce it.</div>
+        </div>
+    </div>
+</div>
+
+<a href="{% url "learning_modules:riskAndDiversification" %}">
+    <div id="nextButton">
+        <div style="display: inline-block;">Next Page</div>
+        <img src="{% static "assets/chevron-sign-to-right.svg" %}" alt="nextArrow" style="height: 12px; display: inline-block;">
+    </div>
+</a>
+
+<a href="{% url "learning_modules:introduction" %}">
+    <div id="prevButton" >
+        <img src="{% static "assets/chevron-sign-to-left.svg" %}" alt="prevArrow" style="height: 12px; display: inline-block;">
+        <div style="display: inline-block;">Prev Page</div>
+    </div>
+</a>
+
+{% endblock %}

@@ -1,0 +1,57 @@
+{% extends "learning_modules/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="leftNav cleanBox">
+    <a class="goAwayA" href="{% url "learning_modules:introduction" %}"><div class="leftNavSection " style="border-top-right-radius: 10px; border-top-left-radius: 10px;">Introduction</div></a>
+    <a class="goAwayA" href="{% url "learning_modules:whatIsInvesting" %}"><div class="leftNavSection ">What is Investing?</div></a>
+    <a class="goAwayA" href="{% url "learning_modules:riskAndDiversification" %}"><div class="leftNavSection ">Risk and Diversification</div></a>
+    <a class="goAwayA" href="{% url "learning_modules:fixedIncome" %}"><div class="leftNavSection active">Fixed Income</div></a>
+    <a class="goAwayA" href="{% url "learning_modules:stocks" %}"><div class="leftNavSection">Stocks</div></a>
+    <a class="goAwayA" href="{% url "learning_modules:mutualFunds" %}"><div class="leftNavSection">Mutual Funds/ETFs</div></a>
+    <img src="{% static "assets/logo copy.svg" %}" alt="Logo" class="leftNavLogo">
+  
+</div>
+
+<div class="rightWrapper">
+    <div class="tutorialContentWrapper cleanBox">
+        <div class="contentHeader">
+            <a class="btn btn-success btn-lg navButton" href="{% url "learning_modules:index" %}" >HOME</a>
+            <a class="btn btn-success btn-lg navButton" href="{% url "learning_modules:compare" %}">ANALYZE</a>
+            <a class="btn btn-success btn-lg navButton" href="#">CONNECT</a>
+            <img src="{% static "assets/logo copy.svg" %}" alt="Logo" class='textLogo-graphic'>
+            <div class="textLogo">INVESTR</div>
+            <div class="contentDetailLine"></div>
+        </div>
+
+        <div id="page1" class="tutorialSection" style="display: block;">
+            <div style="width: 100%; height: auto; align-content: center; align-items: center; text-align: center;">
+                <div class="textLogo">Fixed Income</div>
+            </div>
+            <div class="pagePara">Fixed income investments are investments that have a fixed return that’s paid out at a regular frequency such as annually, semi-annually, quarterly, or monthly. This fixed return comes in the form of interest payments. The most popular fixed income investments are bonds and GICs (Guaranteed Investment Certificates).</div>
+            <div class="pagePara">Bonds are essentially loans made by an investor to a borrower who is generally either governmental or corporate (government bonds and corporate bonds). The amount that is lent out (capital transferred from investor to other party) is known as the principal amount. It is also referred to as the face value of the bond. The length of time that the borrower intends to use the funds for before paying it back is known as the term. The principal value is owed entirely at the end of the term, not in between. The payments in between (usually semi-annually) are the interest payments meant to compensate the investor for their capital. These are often referred to coupon payments. Instead of paying these coupon payments, some bonds are known as zero-coupon bonds or strip bonds, where the entire interest is paid out at the end of the term along with the face value. The main advantage of these strip bonds is that they offer a compounding interest return. This means that the interest payments that would have been given out are assumed to go back into the investment. So, you are basically investing your returns and earning money on your money.</div>
+            <div class="pagePara">Guaranteed Investment Certificates (GICs) are fixed income investments typically offered by financial institutions in Canada. They are very similar to zero-coupon bonds, except that they are issued exclusively by banks and trust companies.</div>
+            <div class="pagePara">Fixed income investments are indeed some of the safest investments due to their predictable returns. The most important factors to consider is the borrower’s credit rating, which is similar to a person’s credit score. The credit rating is based on how well the entity has met their debt obligations, and its recommended to invest in companies with higher credit ratings because they are much less likely to go bankrupt and break down. Of course, entities with low credit ratings will offer a higher interest rate on their fixed income investments as a premium for the extra risk assumed by the investor.</div>
+            <div class="pagePara">In a portfolio, fixed income investments provide stability to the returns as well as consistent income from coupon payments where applicable. This can be extremely useful for investors depending on their situation, such as a retired couple who need the income payments to sustain their lifestyle.</div>
+        </div>
+    </div>
+</div>
+
+<a href="{% url "learning_modules:stocks" %}">
+    <div id="nextButton">
+        <div style="display: inline-block;">Next Page</div>
+        <img src="{% static "assets/chevron-sign-to-right.svg" %}" alt="nextArrow" style="height: 12px; display: inline-block;">
+    </div>
+</a>
+
+<a href="{% url "learning_modules:riskAndDiversification" %}">
+    <div id="prevButton" >
+        <img src="{% static "assets/chevron-sign-to-left.svg" %}" alt="prevArrow" style="height: 12px; display: inline-block;">
+        <div style="display: inline-block;">Prev Page</div>
+    </div>
+</a>
+ 
+{% endblock %}
+
